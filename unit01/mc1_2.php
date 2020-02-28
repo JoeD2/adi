@@ -26,7 +26,7 @@ $sql = "SELECT answer FROM ans WHERE username = '{$username}'";
 if($result = mysqli_query($link, $sql)){
     if(mysqli_num_rows($result) > 0){
         while($row = mysqli_fetch_array($result)){
-            if ($row['password'] == $canswer) {
+            if ($row['answer'] == $canswer) {
               $password_err = "Correct. It was answer " . $canswer;
             } else {
               $password_err = "Wrong. It was answer " . $canswer;

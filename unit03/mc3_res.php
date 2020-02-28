@@ -56,7 +56,7 @@ if($result = mysqli_query($link, $sql)){
     if(mysqli_num_rows($result) > 0){
         while($row = mysqli_fetch_array($result)){
           $password_err = "Don't Submit PHP";
-          $password = $row['password'];
+          $password = $row['answer'];
         }
         // Free result set
         mysqli_free_result($result);
