@@ -27,7 +27,7 @@ $page_num = 17;
 $username = "{$_SESSION["username"]}{$unit_num}_{$page_num}";
 
 //Get answer if exists
-$sql = "SELECT password FROM users WHERE username = '{$username}'";
+$sql = "SELECT answer FROM ans WHERE username = '{$username}'";
 if($result = mysqli_query($link, $sql)){
     if(mysqli_num_rows($result) > 0){
         while($row = mysqli_fetch_array($result)){

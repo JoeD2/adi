@@ -31,7 +31,7 @@ $answered = 0;
 $check = 1;
 $last_answered = 1;
 while ($check <= 6) {
-    $sql = "SELECT password FROM users WHERE username = '{$_SESSION["username"]}{$unit_num}_{$check}_rs'";
+    $sql = "SELECT answer FROM ans WHERE username = '{$_SESSION["username"]}{$unit_num}_{$check}_rs'";
     if($result = mysqli_query($link, $sql)){
         if(mysqli_num_rows($result) > 0){
             $answered = $answered + 1;
@@ -53,7 +53,7 @@ if ($answered < 6) {
 }
 
 //Get answer if exists
-$sql = "SELECT password FROM users WHERE username = '{$username}'";
+$sql = "SELECT answer FROM ans WHERE username = '{$username}'";
 if($result = mysqli_query($link, $sql)){
     if(mysqli_num_rows($result) > 0){
         while($row = mysqli_fetch_array($result)){

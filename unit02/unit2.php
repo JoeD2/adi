@@ -25,7 +25,7 @@ $complete_rs = 0;
 $page_num = 1;
 //Check if cp completed
 while ($page_num <= 20) {
-    $sql = "SELECT password FROM users WHERE username = '{$_SESSION["username"]}{$unit_num}_{$page_num}'";
+    $sql = "SELECT answer FROM ans WHERE username = '{$_SESSION["username"]}{$unit_num}_{$page_num}'";
     if($result = mysqli_query($link, $sql)){
         if(mysqli_num_rows($result) > 0){
             $complete_cp = $complete_cp + 1;
@@ -42,7 +42,7 @@ while ($page_num <= 20) {
 $page_num = 1;
 //Check if mc completed
 while ($page_num <= 20) {
-    $sql = "SELECT password FROM users WHERE username = '{$_SESSION["username"]}{$unit_num}_{$page_num}_mc'";
+    $sql = "SELECT answer FROM ans WHERE username = '{$_SESSION["username"]}{$unit_num}_{$page_num}_mc'";
     if($result = mysqli_query($link, $sql)){
         if(mysqli_num_rows($result) > 0){
             $complete_mc = $complete_mc + 1;
@@ -59,7 +59,7 @@ while ($page_num <= 20) {
 $page_num = 1;
 //Check if rs completed
 while ($page_num <= 20) {
-    $sql = "SELECT password FROM users WHERE username = '{$_SESSION["username"]}{$unit_num}_{$page_num}_rs'";
+    $sql = "SELECT answer FROM ans WHERE username = '{$_SESSION["username"]}{$unit_num}_{$page_num}_rs'";
     if($result = mysqli_query($link, $sql)){
         if(mysqli_num_rows($result) > 0){
             $complete_rs = $complete_rs + 1;
