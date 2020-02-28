@@ -13,12 +13,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-// Check if the user has paid, if not then redirect him to pay page
-if($_SESSION["paid"] == 'No'){
-    header("location: /pay.html");
-    exit;
-}
-
 // Define variables and initialize with values
 $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
@@ -123,8 +117,7 @@ pr_num = Number(p_num) - 1;
         //Set current Q number
         document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <p>A cockpit drill/pre-start check is necessary for all drivers. Briefly explain what an ‘instructor’s cockpit drill’ might entail.
-          (Hint: Think about sitting in the left seat – the instructor's seat – of a driving school car)</p>
+        <p>At the start of a lesson what might you need to check in terms of an instructor 'cockpit drill'?</p>
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label>Answer</label>

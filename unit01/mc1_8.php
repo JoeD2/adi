@@ -13,12 +13,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-// Check if the user has paid, if not then redirect him to pay page
-if($_SESSION["paid"] == 'No'){
-    header("location: /pay.html");
-    exit;
-}
-
 // Define variables and initialize with values
 $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
@@ -106,10 +100,10 @@ n_num = Number(p_num) + 1;
 pr_num = Number(p_num) - 1;
 
 //Set Answers
-answer1 = "1. as soon as it is 18 months old";
-answer2 = "2. by the second anniversary of registration";
-answer3 = "3. when it is sold or transferred to a new owner";
-answer4 = "4. by the third anniversary of registration";
+answer1 = "1. from new";
+answer2 = "2. at 2 years old";
+answer3 = "3. everytime it is sold";
+answer4 = "4. 3 years from registration";
 </script>
 
 <!DOCTYPE html>
@@ -151,7 +145,7 @@ answer4 = "4. by the third anniversary of registration";
             //Set current Q number
             document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <h4 class="question">A private motor car must have an MOT Certificate:</h4>
+        <h4 class="question">When must a car start taking MOT checks?</h4>
 
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">

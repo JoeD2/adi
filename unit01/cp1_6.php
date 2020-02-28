@@ -13,12 +13,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-// Check if the user has paid, if not then redirect him to pay page
-if($_SESSION["paid"] == 'No'){
-    header("location: /pay.html");
-    exit;
-}
-
 // Define variables and initialize with values
 $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
@@ -123,7 +117,7 @@ pr_num = Number(p_num) - 1;
         //Set current Q number
         document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <p>If a driving instructors does not check the Registration Document and MOT certificates of new students. Could they be breaking the law?</p>
+        <p>If an instructor has a new student which documents must you check to ensure they are legal?</p>
         <a href="https://despatch.blog.gov.uk/2015/11/30/checking-your-pupils-driving-licence-information/">Licence Check</a>
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">

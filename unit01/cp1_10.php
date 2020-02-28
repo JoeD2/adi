@@ -13,12 +13,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-// Check if the user has paid, if not then redirect him to pay page
-if($_SESSION["paid"] == 'No'){
-    header("location: /pay.html");
-    exit;
-}
-
 // Define variables and initialize with values
 $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
@@ -123,7 +117,7 @@ pr_num = Number(p_num) - 1;
         //Set current Q number
         document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <p>What warnings might you offer learners about booking theory and practical tests online and what information should you have readily available to email or text them?</p>
+        <p>Do you remember booking your theory or practical test? Was it a quick process? What advice could you give students about booking?</p>
         <a href="https://www.gov.uk/book-driving-test">Book Test</a>
         <br><a href="https://www.gov.uk/book-theory-test">Book Theory Test</a>
         <br><a href="https://www.gov.uk/government/news/learner-drivers-warned-about-extra-charges">Test Info</a>

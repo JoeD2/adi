@@ -13,12 +13,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-// Check if the user has paid, if not then redirect him to pay page
-if($_SESSION["paid"] == 'No'){
-    header("location: /pay.html");
-    exit;
-}
-
 // Define variables and initialize with values
 $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
@@ -123,7 +117,7 @@ pr_num = Number(p_num) - 1;
         //Set current Q number
         document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <p>It used to be common practice for some drivers to move away in second gear, why is this not appropriate for the vast majority of modern vehicles?</p>
+        <p>Should an 'L' driver ever have a lesson on the motorway? If yes then at what point in their training would it be a good time? </p>
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label>Answer</label>

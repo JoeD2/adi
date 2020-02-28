@@ -100,10 +100,10 @@ n_num = Number(p_num) + 1;
 pr_num = Number(p_num) - 1;
 
 //Set Answers
-answer1 = "1. medical check";
+answer1 = "1. spot check";
 answer2 = "2. standards check";
-answer3 = "3. ongoing assessment";
-answer4 = "4. emotional assessment";
+answer3 = "3. stability assessment";
+answer4 = "4. physical assessment";
 </script>
 
 <!DOCTYPE html>
@@ -145,7 +145,7 @@ answer4 = "4. emotional assessment";
             //Set current Q number
             document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <h4 class="question">Every 4 years Driving Instructors undergo a test of their ability to instruct. This is called the:</h4>
+        <h4 class="question">Driving Instructors undergo a test of their ability to instruct every 4 years. What is this called?</h4>
 
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">

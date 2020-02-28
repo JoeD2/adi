@@ -13,12 +13,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-// Check if the user has paid, if not then redirect him to pay page
-if($_SESSION["paid"] == 'No'){
-    header("location: /pay.html");
-    exit;
-}
-
 // Define variables and initialize with values
 $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
@@ -106,10 +100,10 @@ n_num = Number(p_num) + 1;
 pr_num = Number(p_num) - 1;
 
 //Set Answers
-answer1 = "1. three years";
-answer2 = "2. four years";
-answer3 = "3. five years";
-answer4 = "4. one year";
+answer1 = "1. A CRB check";
+answer2 = "2. A medical check";
+answer3 = "3. An eyesight check";
+answer4 = "4. A drug test";
 </script>
 
 <!DOCTYPE html>
@@ -151,7 +145,7 @@ answer4 = "4. one year";
             //Set current Q number
             document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <h4 class="question">Before you can be admitted to the Register of Approved Driving Instructors you must pass all ADI qualifying exams, undertake a CRB check and hold a full driving licence for an unbroken period of:</h4>
+        <h4 class="question">To become an Approved Driving Instructors you must get what kind of check?</h4>
 
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">

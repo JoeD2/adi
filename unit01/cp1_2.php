@@ -117,7 +117,7 @@ pr_num = Number(p_num) - 1;
         //Set current Q number
         document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <p>Should an 'L' driver ever have a lesson on the motorway? If yes then at what point in their training would it a good time? </p>
+        <p>Your car has a flat battery but fortunately you are parked on a hill in an empty car park. How might you start the car?</p>
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label>Answer</label>

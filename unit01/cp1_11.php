@@ -13,12 +13,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-// Check if the user has paid, if not then redirect him to pay page
-if($_SESSION["paid"] == 'No'){
-    header("location: /pay.html");
-    exit;
-}
-
 // Define variables and initialize with values
 $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
@@ -123,8 +117,9 @@ pr_num = Number(p_num) - 1;
         //Set current Q number
         document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <p>As a practical exercise, check to make sure that you can easily read a modern car number plate from a minimum distance of 26.5 metres then choose another car and pace out the maximum distance at which you can read the number plate.
-          Record your result below and offer an opinion about whether or not you consider the eyesight requirement to be sufficient, briefly explaining the reasons for your thoughts.</p>
+        <p>Drivers must be able to easily read a modern car number plate from a minimum distance of 26.5 metres.
+          How should you check their eyesight before lessons?
+          If your student cannot read a number plate what advice could you give them?</p>
         <a href="https://www.gov.uk/driving-eyesight-rules">Eyesight Rules</a>
         <br><a href="https://www.gov.uk/adi-part-2-test/what-happens-during-test">Test Info</a>
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">

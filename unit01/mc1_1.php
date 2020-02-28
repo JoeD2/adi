@@ -19,7 +19,7 @@ $username_err = $password_err = $confirm_password_err = "";
 $unit_num = 1;
 $page_num = 1;
 $username = "{$_SESSION["username"]}{$unit_num}_{$page_num}_mc";
-$canswer = "2";
+$canswer = "3";
 
 //Get answer if exists
 $sql = "SELECT answer FROM ans WHERE username = '{$username}'";
@@ -103,10 +103,10 @@ n_num = Number(p_num) + 1;
 pr_num = Number(p_num) - 1;
 
 //Set Answers
-answer1 = "1. car handling";
-answer2 = "2. teaching skills";
-answer3 = "3. eyesight";
-answer4 = "4. observation skills";
+answer1 = "1. two foot braking";
+answer2 = "2. using the handbrake";
+answer3 = "3. changing down the gears";
+answer4 = "4. turning off the engine";
 </script>
 
 <!DOCTYPE html>
@@ -148,7 +148,7 @@ answer4 = "4. observation skills";
             //Set current Q number
             document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <h4 class="question">Part 3 of the ADI qualifying tests, is designed to assess:</h4>
+        <h4 class="question">Assume you are in an old sports car. How might you aid the braking system?</h4>
 
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">

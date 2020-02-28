@@ -13,19 +13,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-// Check if the user has paid, if not then redirect him to pay page
-if($_SESSION["paid"] == 'No'){
-    header("location: /pay.html");
-    exit;
-}
-
 // Define variables and initialize with values
 $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
 $unit_num = 1;
 $page_num = 7;
 $username = "{$_SESSION["username"]}{$unit_num}_{$page_num}_mc";
-$canswer = "2";
+$canswer = "1";
 
 //Get answer if exists
 $sql = "SELECT answer FROM ans WHERE username = '{$username}'";
@@ -106,10 +100,10 @@ n_num = Number(p_num) + 1;
 pr_num = Number(p_num) - 1;
 
 //Set Answers
-answer1 = "1. driver of a vehicle";
-answer2 = "2. registered keeper of a vehicle";
-answer3 = "3. owner of a vehicle";
-answer4 = "4. person who taxes the vehicle";
+answer1 = "1. the previous owner";
+answer2 = "2. the new owner";
+answer3 = "3. the DVLA";
+answer4 = "4. the person who taxes the vehicle";
 </script>
 
 <!DOCTYPE html>
@@ -151,7 +145,7 @@ answer4 = "4. person who taxes the vehicle";
             //Set current Q number
             document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <h4 class="question">The vehicle registration document is always issued to the:</h4>
+        <h4 class="question">When you buy a car who must post the change of registration documents?</h4>
 
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">

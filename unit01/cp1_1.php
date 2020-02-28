@@ -7,12 +7,6 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/config_answer.php");
 // Initialize the session
 session_start();
 
-// Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: /login.php");
-    exit;
-}
-
 // Define variables and initialize with values
 $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
@@ -113,7 +107,8 @@ p_num = Number(p_num) - 1;
     </nav>
     <div class="wrapper">
         <h2 class="text-center">Q1</h2>
-        <p>In older cars it used to be common practice to change down gears sequentially when braking. Why is this no longer the case?</p>
+        <p>Speedometers are sometimes not correct. How might you check the accuracy of your speedometer to ensure it is legal?</p>
+        <a href="https://www.startrescue.co.uk/breakdown-cover/motoring-advice/safety-and-security/how-accurate-is-my-speedometer">Speedometers</a>
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label>Answer</label>

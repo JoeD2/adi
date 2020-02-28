@@ -13,12 +13,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-// Check if the user has paid, if not then redirect him to pay page
-if($_SESSION["paid"] == 'No'){
-    header("location: /pay.html");
-    exit;
-}
-
 // Define variables and initialize with values
 $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
@@ -106,10 +100,10 @@ n_num = Number(p_num) + 1;
 pr_num = Number(p_num) - 1;
 
 //Set Answers
-answer1 = "1. six months";
-answer2 = "2. six years";
+answer1 = "1. six weeks";
+answer2 = "2. two years";
 answer3 = "3. four years";
-answer4 = "4. one year";
+answer4 = "4. seven years";
 </script>
 
 <!DOCTYPE html>
@@ -151,7 +145,7 @@ answer4 = "4. one year";
             //Set current Q number
             document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <h4 class="question">ADI registration has to be renewed by paying a registration fee. The period of registration is:</h4>
+        <h4 class="question">How often must you renew your ADI registration on passing?:</h4>
 
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">

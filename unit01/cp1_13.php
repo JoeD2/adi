@@ -13,12 +13,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-// Check if the user has paid, if not then redirect him to pay page
-if($_SESSION["paid"] == 'No'){
-    header("location: /pay.html");
-    exit;
-}
-
 // Define variables and initialize with values
 $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
@@ -123,8 +117,8 @@ pr_num = Number(p_num) - 1;
         //Set current Q number
         document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <p>This question is in two parts. 1. What advice would you give to someone with a significant disability who approached you for driving lessons?
-           2.Where is the nearest place to your location that people with a disability can be assessed as potential drivers (with regard to the vehicle adaptations, etc.)?</p>
+        <p>You are approached for lessons by someone with a physical disability. Where is the nearest place
+          you can send them to be assessed for driving ability and car modifications? Can you legally teach them after this?</p>
         <a href="https://goo.gl/qGMMtR">Reference 1 - Google Disability Centers</a>
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
