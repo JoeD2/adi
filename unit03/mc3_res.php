@@ -67,7 +67,7 @@ if($result = mysqli_query($link, $sql)){
 
 // Check for answer then prepare an insert statement for score
 if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
-    $sql = "INSERT INTO ans (username, password) VALUES (?, ?)";
+    $sql = "INSERT INTO ans (username, answer) VALUES (?, ?)";
 
     if($stmt = mysqli_prepare($link, $sql)){
         // Bind variables to the prepared statement as parameters
