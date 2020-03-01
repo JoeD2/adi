@@ -119,7 +119,7 @@ answer4 = "4. there is a 14.6 ton maximum weight limit";
     <meta charset="UTF-8">
     <title>Unit 2 - Road Signs</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <link rel="stylesheet" href="/mc.css">
+    <link rel="stylesheet" href="/css/mc.css">
     <style>
         form {
             display: inline-block;

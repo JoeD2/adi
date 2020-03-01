@@ -121,7 +121,7 @@ answer4 = "4. when you want your learner to stop on the left";
     <meta charset="UTF-8">
     <title>Unit 3 - Multiple Choice</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <link rel="stylesheet" href="/mc.css">
+    <link rel="stylesheet" href="/css/mc.css">
     <style>
         form {
             display: inline-block;
