@@ -45,7 +45,7 @@ mysqli_close($link);
     <meta charset="UTF-8">
     <title>Welcome</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="css/home.css">
     <style type="text/css">
         body{ font: 14px sans-serif; text-align: center; }
     </style>
