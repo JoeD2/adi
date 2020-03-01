@@ -13,18 +13,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-// Check if the user has paid, if not then redirect him to pay page
-if($_SESSION["paid"] == 'No'){
-    header("location: /pay.html");
-    exit;
-}
 // Define variables and initialize with values
 $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
 $unit_num = 1;
 $page_num = 2;
 $username = "{$_SESSION["username"]}{$unit_num}_{$page_num}_rs";
-$canswer = "2";
+$canswer = "3";
 
 //Get answer if exists
 $sql = "SELECT answer FROM ans WHERE username = '{$username}'";
@@ -105,10 +100,10 @@ n_num = Number(p_num) + 1;
 pr_num = Number(p_num) - 1;
 
 //Set Answers
-answer1 = "1. you may overtake on the left";
-answer2 = "2. you must move to the next lane on the left";
-answer3 = "3. you must leave the motorway";
-answer4 = "4. you must use the hard shoulder only";
+answer1 = "1. slowing for cyclists is not necessary";
+answer2 = "2. cyclists will never be in the road";
+answer3 = "3. there should not be cyclists on the road";
+answer4 = "4. cyclists use this road often";
 
 </script>
 

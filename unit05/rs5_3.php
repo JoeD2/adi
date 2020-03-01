@@ -25,7 +25,7 @@ $username_err = $password_err = $confirm_password_err = "";
 $unit_num = 5;
 $page_num = 3;
 $username = "{$_SESSION["username"]}{$unit_num}_{$page_num}_rs";
-$canswer = "2";
+$canswer = "1";
 
 //Get answer if exists
 $sql = "SELECT answer FROM ans WHERE username = '{$username}'";
@@ -106,10 +106,10 @@ n_num = Number(p_num) + 1;
 pr_num = Number(p_num) - 1;
 
 //Set Answers
-answer1 = "1. series of bends";
-answer2 = "2. double bend first to the right and then to the left";
-answer3 = "3. double bend first to the left and then to the right";
-answer4 = "4. slow down, bends ahead";
+answer1 = "1. no pedestrians";
+answer2 = "2. pedestrian crossing ahead";
+answer3 = "3. pedestrians in the road ahead";
+answer4 = "4. pedestrians only";
 
 </script>
 

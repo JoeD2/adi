@@ -13,19 +13,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-// Check if the user has paid, if not then redirect him to pay page
-if($_SESSION["paid"] == 'No'){
-    header("location: /pay.html");
-    exit;
-}
-
 // Define variables and initialize with values
 $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
 $unit_num = 1;
 $page_num = 18;
 $username = "{$_SESSION["username"]}{$unit_num}_{$page_num}_mc";
-$canswer = "1";
+$canswer = "2";
 
 //Get answer if exists
 $sql = "SELECT answer FROM ans WHERE username = '{$username}'";
@@ -106,10 +100,10 @@ n_num = Number(p_num) + 1;
 pr_num = Number(p_num) - 1;
 
 //Set Answers
-answer1 = "1. check that handbrake is on and that the gear lever in in the neutral position";
-answer2 = "2. check that the gear lever in in the neutral position and handbrake is on";
-answer3 = "3. press the clutch down and apply handbrake";
-answer4 = "4. press the footbrake and select neutral";
+answer1 = "1. check the car is in 1st and press in the clutch";
+answer2 = "2. check that the handbrake is applied and the car is in neutral";
+answer3 = "3. press the brake down and release the handbrake";
+answer4 = "4. press the gas pedal all the way down";
 </script>
 
 <!DOCTYPE html>
@@ -151,7 +145,7 @@ answer4 = "4. press the footbrake and select neutral";
             //Set current Q number
             document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <h4 class="question">In addition to the additional action required in some cars, the normally accepted order for the safety checks before starting the engine is to:</h4>
+        <h4 class="question">Before starting your engine:</h4>
 
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">

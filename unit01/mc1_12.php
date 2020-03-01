@@ -13,19 +13,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-// Check if the user has paid, if not then redirect him to pay page
-if($_SESSION["paid"] == 'No'){
-    header("location: /pay.html");
-    exit;
-}
-
 // Define variables and initialize with values
 $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
 $unit_num = 1;
 $page_num = 12;
 $username = "{$_SESSION["username"]}{$unit_num}_{$page_num}_mc";
-$canswer = "2";
+$canswer = "3";
 
 //Get answer if exists
 $sql = "SELECT answer FROM ans WHERE username = '{$username}'";
@@ -106,10 +100,10 @@ n_num = Number(p_num) + 1;
 pr_num = Number(p_num) - 1;
 
 //Set Answers
-answer1 = "1. 18 months";
-answer2 = "2. 12 months";
-answer3 = "3. 6 months";
-answer4 = "4. 3 years";
+answer1 = "1. a new brake pedal is required";
+answer2 = "2. the brakes are disconnected";
+answer3 = "3. the hydraulic system contains air";
+answer4 = "4. the brakes are rusty";
 </script>
 
 <!DOCTYPE html>
@@ -151,7 +145,7 @@ answer4 = "4. 3 years";
             //Set current Q number
             document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <h4 class="question">A UK resident who has full driving licence issued in a country that has no licence exchange agreement with the UK is permitted drive in the UK for a fixed period before he/she is required to pass a UK driving test. The maximum period allowed is:</h4>
+        <h4 class="question">If a brake pedal feels spongy it would suggest:</h4>
 
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">

@@ -25,7 +25,7 @@ $username_err = $password_err = $confirm_password_err = "";
 $unit_num = 2;
 $page_num = 17;
 $username = "{$_SESSION["username"]}{$unit_num}_{$page_num}_mc";
-$canswer = "4";
+$canswer = "1";
 
 //Get answer if exists
 $sql = "SELECT answer FROM ans WHERE username = '{$username}'";
@@ -106,10 +106,10 @@ n_num = Number(p_num) + 1;
 pr_num = Number(p_num) - 1;
 
 //Set Answers
-answer1 = "1. hydraulic system";
-answer2 = "2. engine";
-answer3 = "3. suspension system";
-answer4 = "4. transmission system";
+answer1 = "1. just before the car starts to move";
+answer2 = "2. well before the car starts to move";
+answer3 = "3. as the car starts to move";
+answer4 = "4. just after the car has started to move";
 </script>
 
 <!DOCTYPE html>
@@ -151,7 +151,7 @@ answer4 = "4. transmission system";
             //Set current Q number
             document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <h4 class="question">The gearbox and differential gearing form part of the:</h4>
+        <h4 class="question">When moving off the blind spots should be checked at what point?</h4>
 
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">

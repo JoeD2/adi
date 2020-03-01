@@ -13,19 +13,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-// Check if the user has paid, if not then redirect him to pay page
-if($_SESSION["paid"] == 'No'){
-    header("location: /pay.html");
-    exit;
-}
-
 // Define variables and initialize with values
 $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
 $unit_num = 1;
 $page_num = 9;
 $username = "{$_SESSION["username"]}{$unit_num}_{$page_num}_mc";
-$canswer = "1";
+$canswer = "2";
 
 //Get answer if exists
 $sql = "SELECT answer FROM ans WHERE username = '{$username}'";
@@ -106,10 +100,10 @@ n_num = Number(p_num) + 1;
 pr_num = Number(p_num) - 1;
 
 //Set Answers
-answer1 = "1. have to pay for a re-test";
-answer2 = "2. be given priority for a new test date";
-answer3 = "3. be assessed on his/her performance before the breakdown";
-answer4 = "4. automatically be sent a re-test date with no charge";
+answer1 = "1. the brake pedal should be pressed and released continuously";
+answer2 = "2. there should only be light to zero pressure on the brake pedal as the car stops";
+answer3 = "3. the brake pedal pressure should remain the same throughout stopping";
+answer4 = "4. the brake pedal should be pressed filmly at the end of braking";
 </script>
 
 <!DOCTYPE html>
@@ -151,7 +145,7 @@ answer4 = "4. automatically be sent a re-test date with no charge";
             //Set current Q number
             document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <h4 class="question">If the vehicle used for any driving test, or for an ADI Part-Three test, breaks down during the test the candidate will:</h4>
+        <h4 class="question">Which explains the technique of braking smoothly to a learner?</h4>
 
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">

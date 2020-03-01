@@ -13,12 +13,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-// Check if the user has paid, if not then redirect him to pay page
-if($_SESSION["paid"] == 'No'){
-    header("location: /pay.html");
-    exit;
-}
-
 // Define variables and initialize with values
 $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
@@ -106,10 +100,10 @@ n_num = Number(p_num) + 1;
 pr_num = Number(p_num) - 1;
 
 //Set Answers
-answer1 = "1. Narrow Roads";
-answer2 = "2. Dual-carriageway ends";
-answer3 = "3. Motorway";
-answer4 = "4. Turn Left";
+answer1 = "1. Turn Right";
+answer2 = "2. End of Dual-carriageway";
+answer3 = "3. One way";
+answer4 = "4. Road Narrows Ahead";
 
 </script>
 

@@ -13,19 +13,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-// Check if the user has paid, if not then redirect him to pay page
-if($_SESSION["paid"] == 'No'){
-    header("location: /pay.html");
-    exit;
-}
-
 // Define variables and initialize with values
 $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
 $unit_num = 1;
 $page_num = 10;
 $username = "{$_SESSION["username"]}{$unit_num}_{$page_num}_mc";
-$canswer = "3";
+$canswer = "4";
 
 //Get answer if exists
 $sql = "SELECT answer FROM ans WHERE username = '{$username}'";
@@ -107,9 +101,9 @@ pr_num = Number(p_num) - 1;
 
 //Set Answers
 answer1 = "1. from any driving test centre";
-answer2 = "2. from the local police authority";
-answer3 = "3. from a main Post Office";
-answer4 = "4. on the internet";
+answer2 = "2. from the local supermarket";
+answer3 = "3. from a Post Office";
+answer4 = "4. on the gov.uk site";
 </script>
 
 <!DOCTYPE html>
@@ -151,7 +145,7 @@ answer4 = "4. on the internet";
             //Set current Q number
             document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <h4 class="question">A physical driving licence application form can be obtained:</h4>
+        <h4 class="question">The quickest way to apply for a provisional licence is:</h4>
 
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">

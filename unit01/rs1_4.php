@@ -13,19 +13,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-// Check if the user has paid, if not then redirect him to pay page
-if($_SESSION["paid"] == 'No'){
-    header("location: /pay.html");
-    exit;
-}
-
 // Define variables and initialize with values
 $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
 $unit_num = 1;
 $page_num = 4;
 $username = "{$_SESSION["username"]}{$unit_num}_{$page_num}_rs";
-$canswer = "2";
+$canswer = "1";
 
 //Get answer if exists
 $sql = "SELECT answer FROM ans WHERE username = '{$username}'";
@@ -106,10 +100,10 @@ n_num = Number(p_num) + 1;
 pr_num = Number(p_num) - 1;
 
 //Set Answers
-answer1 = "1. you must maintain a minimum speed of 20 mph";
-answer2 = "2. you must not exceed 20 mph";
-answer3 = "3. there is a 20 ton weight limit";
-answer4 = "4. there is a 20 metre maximum length limit";
+answer1 = "1. you must drive at under 20mph";
+answer2 = "2. you must drive at over 20mph";
+answer3 = "3. 20 miles before the road ends";
+answer4 = "4. no cars over 20 tons";
 
 </script>
 

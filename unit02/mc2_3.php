@@ -25,7 +25,7 @@ $username_err = $password_err = $confirm_password_err = "";
 $unit_num = 2;
 $page_num = 3;
 $username = "{$_SESSION["username"]}{$unit_num}_{$page_num}_mc";
-$canswer = "3";
+$canswer = "2";
 
 //Get answer if exists
 $sql = "SELECT answer FROM ans WHERE username = '{$username}'";
@@ -106,10 +106,10 @@ n_num = Number(p_num) + 1;
 pr_num = Number(p_num) - 1;
 
 //Set Answers
-answer1 = "1. excessive wear on the brake pedal";
-answer2 = "2. excessive wear on the brake drums";
-answer3 = "3. air in the hydraulic system";
-answer4 = "4. brake fluid contamination of the brake linings";
+answer1 = "1. 18 months";
+answer2 = "2. 12 months";
+answer3 = "3. 6 months";
+answer4 = "4. 3 years";
 </script>
 
 <!DOCTYPE html>
@@ -151,8 +151,7 @@ answer4 = "4. brake fluid contamination of the brake linings";
             //Set current Q number
             document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <h4 class="question">When explaining ‘brake checks’, to a new learner, you should advise that if the footbrake feels spongy it is probable that there is:</h4>
-
+        <h4 class="question">A UK resident who has full driving licence issued in a country that has no licence exchange agreement with the UK is permitted drive in the UK for a fixed period before he/she is required to pass a UK driving test. The maximum period allowed is:</h4>
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
               <span class="help-block"><?php echo $password_err; ?></span>

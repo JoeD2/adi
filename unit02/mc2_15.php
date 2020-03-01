@@ -25,7 +25,7 @@ $username_err = $password_err = $confirm_password_err = "";
 $unit_num = 2;
 $page_num = 15;
 $username = "{$_SESSION["username"]}{$unit_num}_{$page_num}_mc";
-$canswer = "3";
+$canswer = "1";
 
 //Get answer if exists
 $sql = "SELECT answer FROM ans WHERE username = '{$username}'";
@@ -106,10 +106,10 @@ n_num = Number(p_num) + 1;
 pr_num = Number(p_num) - 1;
 
 //Set Answers
-answer1 = "1. Timing cycle";
-answer2 = "2. Benz cycle";
-answer3 = "3. Otto cycle";
-answer4 = "4. Royce cycle";
+answer1 = "1. it is often good driving practice to miss out an intermediate gear";
+answer2 = "2. you can only miss out an intermediate gear when changing down";
+answer3 = "3. missing out an intermediate gear when changing up is the most eco-friendly way to drive";
+answer4 = "4. you must never miss out an intermediate gear";
 </script>
 
 <!DOCTYPE html>
@@ -151,7 +151,7 @@ answer4 = "4. Royce cycle";
             //Set current Q number
             document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <h4 class="question">The four-stroke cycle is sometimes known as the:</h4>
+        <h4 class="question">When teaching a new learner to change gear, you should explain that when making gear changes:</h4>
 
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">

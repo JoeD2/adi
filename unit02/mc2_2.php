@@ -25,7 +25,7 @@ $username_err = $password_err = $confirm_password_err = "";
 $unit_num = 2;
 $page_num = 2;
 $username = "{$_SESSION["username"]}{$unit_num}_{$page_num}_mc";
-$canswer = "2";
+$canswer = "1";
 
 //Get answer if exists
 $sql = "SELECT answer FROM ans WHERE username = '{$username}'";
@@ -106,10 +106,10 @@ n_num = Number(p_num) + 1;
 pr_num = Number(p_num) - 1;
 
 //Set Answers
-answer1 = "1. the brake pedal should be pressed hardest just as the car stops";
-answer2 = "2. there should be little or no pressure on the brake pedal as the car stops";
-answer3 = "3. brake pedal pressure should remain constant throughout";
-answer4 = "4. brakes should always be pressed as firmly as possible";
+answer1 = "1. have to pay for a re-test";
+answer2 = "2. be given priority for a new test date";
+answer3 = "3. be assessed on his/her performance before the breakdown";
+answer4 = "4. automatically be sent a re-test date with no charge";
 </script>
 
 <!DOCTYPE html>
@@ -151,7 +151,7 @@ answer4 = "4. brakes should always be pressed as firmly as possible";
             //Set current Q number
             document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <h4 class="question">The footbrake should be used smoothly when pulling up. Would you advise new drivers that when braking to a complete halt:</h4>
+        <h4 class="question">If the vehicle used for any driving test, or for an ADI Part-Three test, breaks down during the test the candidate will:</h4>
 
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">

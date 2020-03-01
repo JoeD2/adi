@@ -13,12 +13,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-// Check if the user has paid, if not then redirect him to pay page
-if($_SESSION["paid"] == 'No'){
-    header("location: /pay.html");
-    exit;
-}
-
 // Define variables and initialize with values
 $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
@@ -106,10 +100,10 @@ n_num = Number(p_num) + 1;
 pr_num = Number(p_num) - 1;
 
 //Set Answers
-answer1 = "1. develops the greatest force at the driving wheels";
-answer2 = "2. develops the least force at the driving wheels";
-answer3 = "3. is always used when moving off";
-answer4 = "4. should not be used on a downhill slope";
+answer1 = "1. generate more force at the driving wheels";
+answer2 = "2. generate less force at the driving wheels";
+answer3 = "3. should not be used when towing";
+answer4 = "4. should not be used going downhill";
 </script>
 
 <!DOCTYPE html>
@@ -151,7 +145,7 @@ answer4 = "4. should not be used on a downhill slope";
             //Set current Q number
             document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <h4 class="question">In a car fitted with four manually selected forward gears, first gear:</h4>
+        <h4 class="question">Lower gears:</h4>
 
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">

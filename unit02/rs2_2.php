@@ -25,7 +25,7 @@ $username_err = $password_err = $confirm_password_err = "";
 $unit_num = 2;
 $page_num = 2;
 $username = "{$_SESSION["username"]}{$unit_num}_{$page_num}_rs";
-$canswer = "3";
+$canswer = "2";
 
 //Get answer if exists
 $sql = "SELECT answer FROM ans WHERE username = '{$username}'";
@@ -106,10 +106,10 @@ n_num = Number(p_num) + 1;
 pr_num = Number(p_num) - 1;
 
 //Set Answers
-answer1 = "1. there will never be cyclists ahead";
-answer2 = "2. you need not give way to cyclists on the road ahead";
-answer3 = "3. there should not be cyclists on the road ahead";
-answer4 = "4. you will expect cyclists to be crossing the road ahead";
+answer1 = "1. you may overtake on the left";
+answer2 = "2. you must move to the next lane on the left";
+answer3 = "3. you must leave the motorway";
+answer4 = "4. you must use the hard shoulder only";
 
 </script>
 

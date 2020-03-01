@@ -13,12 +13,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-// Check if the user has paid, if not then redirect him to pay page
-if($_SESSION["paid"] == 'No'){
-    header("location: /pay.html");
-    exit;
-}
-
 // Define variables and initialize with values
 $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
@@ -106,10 +100,10 @@ n_num = Number(p_num) + 1;
 pr_num = Number(p_num) - 1;
 
 //Set Answers
-answer1 = "1. 29.5 metres (97 feet)";
-answer2 = "2. 14.5 metres (47 feet)";
-answer3 = "3. 20.5 metres (67 feet)";
-answer4 = "4. 20 metres (65.61 feet)";
+answer1 = "1. 30 metres";
+answer2 = "2. 14 metres";
+answer3 = "3. 25 metres";
+answer4 = "4. 20 metres";
 </script>
 
 <!DOCTYPE html>
@@ -151,7 +145,7 @@ answer4 = "4. 20 metres (65.61 feet)";
             //Set current Q number
             document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <h4 class="question">The minimum eyesight requirement for car drivers requires that a modern number plate (issued after September 1st 2001) can be read from a distance of:</h4>
+        <h4 class="question">What is the minimum distance the learner must be able to read a number plate?</h4>
 
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">

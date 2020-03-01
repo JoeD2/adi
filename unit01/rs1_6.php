@@ -13,19 +13,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-// Check if the user has paid, if not then redirect him to pay page
-if($_SESSION["paid"] == 'No'){
-    header("location: /pay.html");
-    exit;
-}
-
 // Define variables and initialize with values
 $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
 $unit_num = 1;
 $page_num = 6;
 $username = "{$_SESSION["username"]}{$unit_num}_{$page_num}_rs";
-$canswer = "4";
+$canswer = "2";
 
 //Get answer if exists
 $sql = "SELECT answer FROM ans WHERE username = '{$username}'";
@@ -106,10 +100,10 @@ n_num = Number(p_num) + 1;
 pr_num = Number(p_num) - 1;
 
 //Set Answers
-answer1 = "1. risk of car fires";
-answer2 = "2. no vehicles carrying flammable liquids allowed";
-answer3 = "3. emergency refuge in the event of fire";
-answer4 = "4. no vehicles carrying explosives allowed";
+answer1 = "1. no flammable cars allowed";
+answer2 = "2. no vehicles with explosives allowed";
+answer3 = "3. vehicles with explosives ahead";
+answer4 = "4. no open flames";
 
 </script>
 
