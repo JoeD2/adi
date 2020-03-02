@@ -2,11 +2,9 @@
 // setup
 require_once "config.php";
 $stmt = mysqli_prepare($link, "SELECT * FROM users")
-$num_rows = mysqli_stmt_num_rows($stmt);
-echo "$num_rows Rows\n";
 
 // the condition
-if (num_rows != 5) {
+if (mysqli_stmt_num_rows($stmt) == 5) {
   // the message
   $msg = "You have a new User";
 
