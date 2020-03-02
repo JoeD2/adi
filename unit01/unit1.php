@@ -72,11 +72,9 @@ mysqli_close($link);
 ?>
 
 <script>
-log1 = '<?php echo $log1 ;?>';
 lanswer_mc = '<?php echo $last_answered_mc ;?>';
 lanswer_cp = '<?php echo $last_answered_cp ;?>';
 u_num = '<?php echo $unit_num ;?>';
-console.log(log1);
 </script>
 
 <!DOCTYPE html>
