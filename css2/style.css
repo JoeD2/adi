@@ -175,6 +175,10 @@ hr.socket {
 /* Media Queries */
 
 @media (max-width: 767px) {
+  .home-inner {
+    background: linear-gradient( rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5) ),
+    url(../images/hero_2_mobile.jpg) no-repeat center center fixed;
+  }
   .caption h1 {
     font-size: 2.3rem;
     letter-spacing: .15rem;
