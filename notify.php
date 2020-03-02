@@ -1,18 +1,28 @@
 <?php
-// setup
+
 require_once "config.php";
-$stmt = mysqli_prepare($link, "SELECT * FROM users");
-echo mysqli_stmt_num_rows($stmt);
-// the condition
-if (mysqli_stmt_num_rows($stmt) == 5) {
-  // the message
-  $msg = "You have a new User";
-
-  // use wordwrap() if lines are longer than 70 characters
-  $msg = wordwrap($msg,70);
-
-  // send email
-  mail("joseph-k-douglas@hotmail.co.uk","You have a new User",$msg);
+// Check connection
+if ($link -> connect_errno) {
+  echo "Failed to connect to MySQL: " . $link -> connect_error;
+  exit();
 }
-mysqli_close($link);
+
+// Perform query
+if ($result = $link -> query("SELECT * FROM users")) {
+  echo "Returned rows are: " . $result -> num_rows;
+  if ($result -> num_rows == 5) {
+    // the message
+    $msg = "You have a new User";
+
+    // use wordwrap() if lines are longer than 70 characters
+    $msg = wordwrap($msg,70);
+
+    // send email
+    mail("joseph-k-douglas@hotmail.co.uk","You have a new User",$msg);
+  }
+  // Free result set
+  $result -> free_result();
+}
+
+$link -> close();
 ?>
