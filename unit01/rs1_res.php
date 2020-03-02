@@ -13,12 +13,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-// Check if the user has paid, if not then redirect him to pay page
-if($_SESSION["paid"] == 'No'){
-    header("location: /pay.html");
-    exit;
-}
-
 // Define variables and initialize with values
 $password = $_SESSION['counter1_rs'];
 $username_err = $password_err = "";

@@ -102,8 +102,8 @@ pr_num = Number(p_num) - 1;
 //Set Answers
 answer1 = "1. third-party, fire and theft";
 answer2 = "2. comprehensive insurance";
-answer3 = "3. all risks assurance";
-answer4 = "4. RTA indemnity";
+answer3 = "3. travel insurance";
+answer4 = "4. breakdown cover";
 </script>
 
 <!DOCTYPE html>
@@ -145,7 +145,7 @@ answer4 = "4. RTA indemnity";
             //Set current Q number
             document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <h4 class="question">Which car insurance type provides the most cover?</h4>
+        <h4 class="question">Which type of insurance provides the most cover in an accident?</h4>
 
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">

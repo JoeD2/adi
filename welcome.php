@@ -43,7 +43,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   <div class="menu-wrap">
     <ul class="menu">
         <li>
-            <a href="unit01/unit1.php">Unit 1</a>
+            <a href="unit01/unit1.php">Unit 1 - FREE</a>
         </li>
         <li>
             <a href="unit02/unit2.php">Unit 2</a>

@@ -145,7 +145,7 @@ answer4 = "4. the person who taxes the vehicle";
             //Set current Q number
             document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <h4 class="question">When you buy a car who must post the change of registration documents?</h4>
+        <h4 class="question">When you buy a car who is responsible for changing the registration documents?</h4>
 
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">

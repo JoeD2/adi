@@ -145,7 +145,7 @@ answer4 = "4. police cars";
             //Set current Q number
             document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
-        <h4 class="question">Who is most likely to come between cars when waiting in traffic?</h4>
+        <h4 class="question">Who is most likely to pass on your left side when waiting in traffic?</h4>
 
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
