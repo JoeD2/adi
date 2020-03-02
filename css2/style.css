@@ -39,7 +39,8 @@ body {
 /* Start of Landing Page */
 
 .home-inner {
-  background-image: url(https://aditheory.com/images/hero_1.jpg);
+  background: linear-gradient( rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5) ),
+  url(../images/hero_2.jpg) no-repeat center center fixed;
 }
 .caption {
   width: 100%;
