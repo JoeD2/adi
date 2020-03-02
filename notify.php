@@ -2,7 +2,7 @@
 // setup
 require_once "config.php";
 $stmt = mysqli_prepare($link, "SELECT * FROM users");
-
+echo mysqli_stmt_num_rows($stmt);
 // the condition
 if (mysqli_stmt_num_rows($stmt) == 5) {
   // the message
