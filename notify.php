@@ -1,8 +1,8 @@
 <?php
 // setup
 require_once "config.php";
-$result = mysql_query("SELECT * FROM users", $link);
-$num_rows = mysql_num_rows($result);
+$stmt = mysqli_prepare($link, "SELECT * FROM users")
+$num_rows = mysqli_stmt_num_rows($stmt);
 echo "$num_rows Rows\n";
 
 // the condition
