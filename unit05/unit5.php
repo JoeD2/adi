@@ -17,7 +17,8 @@ if($_SESSION["paid"] == 'No'){
 
 //Declare variables (change unit_num)
 $unit_num = 5;
-$last_answered = 1;
+$last_answered_cp = 1;
+$last_answered_mc = 1;
 $complete_mc = 0;
 $complete_cp = 0;
 $complete_rs = 0;
@@ -29,10 +30,10 @@ while ($page_num <= 20) {
     if($result = mysqli_query($link, $sql)){
         if(mysqli_num_rows($result) > 0){
             $complete_cp = $complete_cp + 1;
-            $last_answered = $page_num;
+            $last_answered_cp = $page_num;
             // Free result set
             mysqli_free_result($result);
-        }
+        } else {break;}
     } else{
         echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
     }
@@ -46,10 +47,10 @@ while ($page_num <= 20) {
     if($result = mysqli_query($link, $sql)){
         if(mysqli_num_rows($result) > 0){
             $complete_mc = $complete_mc + 1;
-            $last_answered = $page_num;
+            $last_answered_mc = $page_num;
             // Free result set
             mysqli_free_result($result);
-        }
+        } else {break;}
     } else{
         echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
     }
@@ -65,7 +66,7 @@ while ($page_num <= 20) {
             $complete_rs = $complete_rs + 1;
             // Free result set
             mysqli_free_result($result);
-        }
+        } else {break;}
     } else{
         echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
     }
@@ -77,7 +78,8 @@ mysqli_close($link);
 ?>
 
 <script>
-lanswer = '<?php echo $last_answered ;?>';
+lanswer_mc = '<?php echo $last_answered_mc ;?>';
+lanswer_cp = '<?php echo $last_answered_cp ;?>';
 u_num = '<?php echo $unit_num ;?>';
 </script>
 
@@ -119,7 +121,7 @@ Training methods: Practise, Emergency stop<br>
   <div class="menu-wrap">
     <ul class="menu">
         <li>
-            <a href ="" onclick="location.href='/unit05/mc'+u_num+'_1.php';return false;">Multiple Choice</a>
+            <a href ="" onclick="location.href='/unit05/mc'+u_num+'_'+lanswer_mc+'.php';return false;">Multiple Choice</a>
         </li>
         <span class="help-block"><?php echo $complete_mc; ?>/20</span>
         <li>
@@ -127,7 +129,7 @@ Training methods: Practise, Emergency stop<br>
         </li>
         <span class="help-block"><?php echo $complete_rs; ?>/6</span>
         <li>
-            <a href ="" onclick="location.href='/unit05/cp'+u_num+'_'+lanswer+'.php';return false;">Comprehension</a>
+            <a href ="" onclick="location.href='/unit05/cp'+u_num+'_'+lanswer_cp+'.php';return false;">Comprehension</a>
         </li>
         <span class="help-block"><?php echo $complete_cp; ?>/20</span>
     </ul>
