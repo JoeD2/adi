@@ -26,7 +26,7 @@ while ($page_num <= 20) {
             $last_answered = $page_num;
             // Free result set
             mysqli_free_result($result);
-        }
+        } else {break;}
     } else{
         echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
     }
