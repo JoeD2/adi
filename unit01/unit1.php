@@ -35,7 +35,7 @@ while ($page_num <= 20) {
 
 $page_num = 1;
 //Check if mc completed
-$log1 = $_SESSION["username"]
+$log1 = $_SESSION["username"];
 while ($page_num <= 20) {
     $sql = "SELECT answer FROM ans WHERE username = '{$_SESSION["username"]}{$unit_num}_{$page_num}_mc'";
     if($result = mysqli_query($link, $sql)){
