@@ -137,7 +137,7 @@ score = '<?php echo $password ;?>';
         <h4 class="question">Road Signs Results</h4>
         <h4 id="scorey" class="u-mb2">Loading</h4>
         <script>
-          document.getElementById("scorey").innerHTML = "Score = " + score.toString();
+          document.getElementById("scorey").innerHTML = "Score = " + score.toString() + "/6";
         </script>
         <div class="form-group text-center">
             <input type="button" class="btn btn-default" onclick="location.href='rs'+u_num+'_'+1+'.php';" value="Review">
