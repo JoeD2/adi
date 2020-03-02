@@ -23,6 +23,7 @@ while ($page_num <= 20) {
     if($result = mysqli_query($link, $sql)){
         if(mysqli_num_rows($result) > 0){
             $complete_cp = $complete_cp + 1;
+            $log1 = $page_num;
             $last_answered = $page_num;
             // Free result set
             mysqli_free_result($result);
@@ -40,7 +41,6 @@ while ($page_num <= 20) {
     if($result = mysqli_query($link, $sql)){
         if(mysqli_num_rows($result) > 0){
             $complete_mc = $complete_mc + 1;
-            $log1 = $page_num;
             $last_answered = $page_num;
             // Free result set
             mysqli_free_result($result);
