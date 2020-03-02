@@ -35,12 +35,12 @@ while ($page_num <= 20) {
 
 $page_num = 1;
 //Check if mc completed
-$log1 = $_SESSION["username"];
 while ($page_num <= 20) {
     $sql = "SELECT answer FROM ans WHERE username = '{$_SESSION["username"]}{$unit_num}_{$page_num}_mc'";
     if($result = mysqli_query($link, $sql)){
         if(mysqli_num_rows($result) > 0){
             $complete_mc = $complete_mc + 1;
+            $log1 = $page_num;
             $last_answered = $page_num;
             // Free result set
             mysqli_free_result($result);
