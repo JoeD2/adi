@@ -175,9 +175,6 @@ hr.socket {
 /* Media Queries */
 
 @media (max-width: 767px) {
-  .home-inner {
-    background: black;
-  }
   .caption h1 {
     font-size: 2.3rem;
     letter-spacing: .15rem;
