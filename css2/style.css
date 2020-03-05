@@ -31,6 +31,10 @@ body {
   color: white;
   padding-top: .8rem;
 }
+.disabled {
+  color: white!important;
+  pointer-events: none;
+}
 .navbar-dark .navbar-nav .nav-link.active,
 .navbar-dark .navbar-nav .nav-link:hover {
   color: #1ebba3;
@@ -67,6 +71,7 @@ body {
 .btn-lg {
   border-width: medium;
   padding: .6rem 1.3rem;
+  margin: .5rem;
   font-size: 1.1rem;
   text-transform: capitalize;
 }
