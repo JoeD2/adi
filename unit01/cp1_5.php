@@ -118,6 +118,7 @@ pr_num = Number(p_num) - 1;
         document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
         <p>What does the acronym DSSSM stand for?</p>
+        <a href="https://www.youtube.com/watch?v=I9Pn2--sjnI">Video on Cockpit Drills (recommended)</a>
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label>Answer</label>

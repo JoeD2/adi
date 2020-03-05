@@ -118,6 +118,7 @@ pr_num = Number(p_num) - 1;
         document.getElementById("currQ").innerHTML = (`Q${p_num}`);
         </script>
         <p>Your car has a flat battery but fortunately you are parked on a hill in an empty car park. How might you start the car?</p>
+        <a href="https://www.confused.com/on-the-road/maintenance/how-to-jump-bump-start-your-car">Alternative ways to start a car</a>
         <form class="text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label>Answer</label>
