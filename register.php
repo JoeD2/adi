@@ -110,7 +110,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         </button>
-        <a class="navbar-brand" href="index.html">ADI Training</a>
+        <a class="navbar-brand" href="index.html">Back</a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">

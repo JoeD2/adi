@@ -10,7 +10,7 @@ if ($link -> connect_errno) {
 // Perform query
 if ($result = $link -> query("SELECT * FROM users")) {
   echo "Returned rows are: " . $result -> num_rows;
-  if ($result -> num_rows != 5) {
+  if ($result -> num_rows != 6) {
     // the message
     $msg = "You have a new User";
 
