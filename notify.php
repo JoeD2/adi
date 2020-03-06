@@ -7,6 +7,10 @@ if ($link -> connect_errno) {
   exit();
 }
 
+// Open the users file for reading
+$section = file_get_contents('users.txt');
+echo $section;
+
 // Perform query
 if ($result = $link -> query("SELECT * FROM users")) {
   echo "Returned rows are: " . $result -> num_rows;
