@@ -14,7 +14,7 @@ echo $section;
 // Perform query
 if ($result = $link -> query("SELECT * FROM users")) {
   echo "Returned rows are: " . $result -> num_rows;
-  if ($result -> num_rows != 6) {
+  if ($result -> num_rows != $section) {
     // the message
     $msg = "You have a new User";
 
@@ -23,6 +23,9 @@ if ($result = $link -> query("SELECT * FROM users")) {
 
     // send email
     mail("joseph-k-douglas@hotmail.co.uk","You have a new User",$msg);
+
+    // Set new users amount
+    file_put_contents('users.txt', $result -> num_rows);
   }
   // Free result set
   $result -> free_result();
