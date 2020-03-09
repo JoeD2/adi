@@ -16,7 +16,7 @@ if ($result = $link -> query("SELECT * FROM users")) {
   echo "Returned rows are: " . $result -> num_rows;
   if ($result -> num_rows != $section) {
     // the message
-    $msg = "You have a new User";
+    $msg = "You have a new User making " + $result -> num_rows + "in total.";
 
     // use wordwrap() if lines are longer than 70 characters
     $msg = wordwrap($msg,70);
